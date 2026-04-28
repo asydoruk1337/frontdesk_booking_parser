@@ -33,6 +33,8 @@ After editing files on disk, click **Reload** on the extension card at `chrome:/
 
 Edit the template and date **locale** under **Template settings** (from the popup or `chrome://extensions` → **Extension options**). If a template is already saved in Chrome Sync, the code default will not overwrite it — update the textarea and click **Save**.
 
+The **default template** (new installs) also appends static Ukrainian text after bank details: **check-in 15:00**, **check-out 11:00**, and **cancellation terms** (free changes up to one week before arrival). Adjust that block in Options to match your policy.
+
 ## Template placeholders
 
 - `{{path.to.field}}` — same paths as in the booking JSON, e.g. `{{ReservationCode}}`, `{{Guests.0.Phone}}`.

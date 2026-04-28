@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "FrontDeskMaster — шаблон з бронювання",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Зчитує відповідь API бронювання й копіює текст за вашим шаблоном.",
   "permissions": ["storage", "clipboardWrite"],
   "host_permissions": ["https://*.frontdeskmaster.com/*"],
