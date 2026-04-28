@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "FrontDeskMaster — шаблон з бронювання",
+  "version": "1.4.0",
+  "description": "Зчитує відповідь API бронювання й копіює текст за вашим шаблоном.",
+  "permissions": ["storage", "clipboardWrite"],
+  "host_permissions": ["https://*.frontdeskmaster.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FDM — згенерувати текст"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.frontdeskmaster.com/*"],
+      "js": ["inject-main.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://*.frontdeskmaster.com/*"],
+      "js": ["content-bridge.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #3d3d3d;
+  background: #fff;
+  min-width: 272px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.panel {
+  padding: 16px 16px 12px;
+}
+
+.status {
+  margin: 0 0 10px;
+  line-height: 1.45;
+  font-size: 12px;
+  color: #6b6b6b;
+  letter-spacing: 0.01em;
+}
+
+.status.ok {
+  color: #2d6a4f;
+}
+
+.meta {
+  margin: 0 0 14px;
+  font-size: 11px;
+  color: #9a9a9a;
+  letter-spacing: 0.02em;
+}
+
+#generate {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  background: #2a2a2a;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+#generate:disabled {
+  background: #f3f3f3;
+  border-color: #e5e5e5;
+  color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+#generate:not(:disabled):hover {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.result {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: #c27b1c;
+}
+
+.result.ok {
+  color: #2d6a4f;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 10px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.link-subtle {
+  font-size: 11px;
+  color: #8c8c8c;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.link-subtle:hover {
+  color: #4a4a4a;
+}
+
+.at-mark {
+  margin: 0;
+  padding: 0 2px;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #b8b8b8;
+  cursor: pointer;
+  line-height: 1;
+  border-radius: 3px;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.at-mark:hover {
+  color: #5c5c5c;
+  background: #ececec;
+}
+
+/* Credits modal */
+.modal[hidden] {
+  display: none !important;
+}
+
+.modal:not([hidden]) {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-scrim {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.modal-card {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 14px 20px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.modal-line {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+}

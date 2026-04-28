@@ -1,0 +1,473 @@
+{
+    "CreateInfo": {
+        "Modified": "\/Date(1777363267073)\/"
+    },
+    "Href": "properties\/5137\/reservations\/110507",
+    "Id": 110507,
+    "AdditionalGuests": [],
+    "ArrivalTime": {
+        "Hours": null,
+        "Minutes": null,
+        "Seconds": null
+    },
+    "AssignedNights": [
+        {
+            "Href": "properties\/5137\/reservations\/110507\/assignedNights\/469636",
+            "Id": 469636,
+            "BedIndex": "D",
+            "Day": "\/Date(1777334400000)\/",
+            "Guest": {
+                "Href": "properties\/5137\/guests\/219295",
+                "Id": 219295,
+                "Address1": "",
+                "Address2": "",
+                "Birthdate": "\/Date(167097600000)\/",
+                "BlacklistReason": "",
+                "BlacklistRecommendation": "",
+                "BlacklistSeverity": "",
+                "ChildRelationship": "",
+                "City": "",
+                "CityIneCode": "",
+                "Country": {
+                    "Href": "countries\/594"
+                },
+                "DocumentUrl": "",
+                "Email": "",
+                "FirstName": "Kerstin ",
+                "Gender": 2,
+                "IdNumber": "C3HTRLFKH",
+                "IdSupportNumber": "",
+                "IdType": 1,
+                "ImageUrl": "",
+                "IsVip": false,
+                "Issuer": "",
+                "LastName": "Buhl",
+                "Phone": "491637214350",
+                "PhotoUrl": "Images\/Gender\/female_icon.gif",
+                "PurposeOfStay": "",
+                "Reservations": [],
+                "SecondLastName": "",
+                "SpecialInfo1": "",
+                "SpecialInfo2": "",
+                "Title": 0,
+                "ZipCode": ""
+            },
+            "OriginalNight": true,
+            "Price": 330.000000000,
+            "PriceIncludeCityTax": false,
+            "RateId": 8,
+            "Room": {
+                "Id": 17,
+                "Code": "8 # Mixed Shared 306"
+            },
+            "RoomUse": {
+                "Id": 4
+            }
+        },
+        {
+            "Href": "properties\/5137\/reservations\/110507\/assignedNights\/469637",
+            "Id": 469637,
+            "BedIndex": "D",
+            "Day": "\/Date(1777420800000)\/",
+            "Guest": {
+                "Href": "properties\/5137\/guests\/219295",
+                "Id": 219295,
+                "Address1": "",
+                "Address2": "",
+                "Birthdate": "\/Date(167097600000)\/",
+                "BlacklistReason": "",
+                "BlacklistRecommendation": "",
+                "BlacklistSeverity": "",
+                "ChildRelationship": "",
+                "City": "",
+                "CityIneCode": "",
+                "Country": {
+                    "Href": "countries\/594"
+                },
+                "DocumentUrl": "",
+                "Email": "",
+                "FirstName": "Kerstin ",
+                "Gender": 2,
+                "IdNumber": "C3HTRLFKH",
+                "IdSupportNumber": "",
+                "IdType": 1,
+                "ImageUrl": "",
+                "IsVip": false,
+                "Issuer": "",
+                "LastName": "Buhl",
+                "Phone": "491637214350",
+                "PhotoUrl": "Images\/Gender\/female_icon.gif",
+                "PurposeOfStay": "",
+                "Reservations": [],
+                "SecondLastName": "",
+                "SpecialInfo1": "",
+                "SpecialInfo2": "",
+                "Title": 0,
+                "ZipCode": ""
+            },
+            "OriginalNight": true,
+            "Price": 330.000000000,
+            "PriceIncludeCityTax": false,
+            "RateId": 8,
+            "Room": {
+                "Id": 17,
+                "Code": "8 # Mixed Shared 306"
+            },
+            "RoomUse": {
+                "Id": 4
+            }
+        },
+        {
+            "Href": "properties\/5137\/reservations\/110507\/assignedNights\/469638",
+            "Id": 469638,
+            "BedIndex": "C",
+            "Day": "\/Date(1777334400000)\/",
+            "Guest": {
+                "Href": "properties\/5137\/guests\/219296",
+                "Id": 219296,
+                "Address1": "",
+                "Address2": "",
+                "Birthdate": "\/Date(-60307200000)\/",
+                "BlacklistReason": "",
+                "BlacklistRecommendation": "",
+                "BlacklistSeverity": "",
+                "ChildRelationship": "",
+                "City": "",
+                "CityIneCode": "",
+                "Country": {
+                    "Href": "countries\/594"
+                },
+                "DocumentUrl": "",
+                "Email": "",
+                "FirstName": "Gumprecht",
+                "Gender": 1,
+                "IdNumber": "C3JRTCL27",
+                "IdSupportNumber": "",
+                "IdType": 1,
+                "ImageUrl": "",
+                "IsVip": false,
+                "Issuer": "",
+                "LastName": "Buhl",
+                "Phone": "491785853358",
+                "PhotoUrl": "Images\/Gender\/male_icon.gif",
+                "PurposeOfStay": "",
+                "Reservations": [],
+                "SecondLastName": "",
+                "SpecialInfo1": "",
+                "SpecialInfo2": "",
+                "Title": 0,
+                "ZipCode": ""
+            },
+            "OriginalNight": true,
+            "Price": 330.000000000,
+            "PriceIncludeCityTax": false,
+            "RateId": 8,
+            "Room": {
+                "Id": 17,
+                "Code": "8 # Mixed Shared 306"
+            },
+            "RoomUse": {
+                "Id": 4
+            }
+        },
+        {
+            "Href": "properties\/5137\/reservations\/110507\/assignedNights\/469639",
+            "Id": 469639,
+            "BedIndex": "C",
+            "Day": "\/Date(1777420800000)\/",
+            "Guest": {
+                "Href": "properties\/5137\/guests\/219296",
+                "Id": 219296,
+                "Address1": "",
+                "Address2": "",
+                "Birthdate": "\/Date(-60307200000)\/",
+                "BlacklistReason": "",
+                "BlacklistRecommendation": "",
+                "BlacklistSeverity": "",
+                "ChildRelationship": "",
+                "City": "",
+                "CityIneCode": "",
+                "Country": {
+                    "Href": "countries\/594"
+                },
+                "DocumentUrl": "",
+                "Email": "",
+                "FirstName": "Gumprecht",
+                "Gender": 1,
+                "IdNumber": "C3JRTCL27",
+                "IdSupportNumber": "",
+                "IdType": 1,
+                "ImageUrl": "",
+                "IsVip": false,
+                "Issuer": "",
+                "LastName": "Buhl",
+                "Phone": "491785853358",
+                "PhotoUrl": "Images\/Gender\/male_icon.gif",
+                "PurposeOfStay": "",
+                "Reservations": [],
+                "SecondLastName": "",
+                "SpecialInfo1": "",
+                "SpecialInfo2": "",
+                "Title": 0,
+                "ZipCode": ""
+            },
+            "OriginalNight": true,
+            "Price": 330.000000000,
+            "PriceIncludeCityTax": false,
+            "RateId": 8,
+            "Room": {
+                "Id": 17,
+                "Code": "8 # Mixed Shared 306"
+            },
+            "RoomUse": {
+                "Id": 4
+            }
+        }
+    ],
+    "AutoAuthoriseStatus": null,
+    "AutoAuthoriseTries": null,
+    "AutoChargeStatus": null,
+    "AutoChargeTries": null,
+    "BMCommission": 0.00,
+    "Balance": 0.00,
+    "BalanceDue": 0.00,
+    "BookLocalSourcePropertyId": 0,
+    "BookingDate": "\/Date(1777363266997)\/",
+    "BookingMethod": {
+        "Href": "properties\/5137\/bookingMethods\/9",
+        "Id": 9,
+        "Active": true,
+        "IsDefault": true,
+        "Logo": "Images\/BookingMethod\/Walk-in.png",
+        "Name": "Walk-in"
+    },
+    "BookingStatus": 6,
+    "CheckInDate": "\/Date(1777334400000)\/",
+    "CheckOutDate": "\/Date(1777507200000)\/",
+    "CheckedInBy": 169354,
+    "CheckedInDate": "\/Date(1777363722670)\/",
+    "CityTaxFromPortal": null,
+    "Coupons": [],
+    "Currency": {
+        "Id": 435
+    },
+    "Discounts": [],
+    "EmailConsentGiven": false,
+    "ExtraField1": "",
+    "ExtraField2": "",
+    "FinancialTransactions": [
+        {
+            "Href": "properties\/5137\/financialTransactions\/298539",
+            "Id": 298539,
+            "AdyenPaymentId": "",
+            "Amount": 1389.2000000000,
+            "CategoryId": -1,
+            "Currency": {
+                "Id": 435
+            },
+            "Description": "",
+            "FinancialAccount": {
+                "Id": 2
+            },
+            "FinancialTransactionItems": [
+                {
+                    "Amount": 330.00,
+                    "IsAccommodation": true,
+                    "ItemId": 469636
+                },
+                {
+                    "Amount": 330.00,
+                    "IsAccommodation": true,
+                    "ItemId": 469637
+                },
+                {
+                    "Amount": 330.00,
+                    "IsAccommodation": true,
+                    "ItemId": 469638
+                },
+                {
+                    "Amount": 330.00,
+                    "IsAccommodation": true,
+                    "ItemId": 469639
+                },
+                {
+                    "Amount": 69.20,
+                    "ItemId": 191686
+                }
+            ],
+            "Guest": {
+                "Id": 219295
+            },
+            "InvoiceNumber": "",
+            "PaymentDate": "\/Date(1777363711526)\/",
+            "PelecardPaymentId": "",
+            "ReportingDate": "\/Date(1777334400000)\/",
+            "ReservationId": 110507,
+            "StripePaymentId": "",
+            "User": {
+                "Id": 169354
+            }
+        }
+    ],
+    "GroupName": "",
+    "Guests": [
+        {
+            "Href": "properties\/5137\/guests\/219295",
+            "Id": 219295,
+            "Address1": "",
+            "Address2": "",
+            "Birthdate": "\/Date(167097600000)\/",
+            "BlacklistReason": "",
+            "BlacklistRecommendation": "",
+            "BlacklistSeverity": "",
+            "ChildRelationship": "",
+            "City": "",
+            "CityIneCode": "",
+            "Country": {
+                "Href": "countries\/594",
+                "Id": 594,
+                "Code": "DE",
+                "Code_alpha3": "DEU",
+                "Currency": {
+                    "Href": "currencies\/"
+                },
+                "Name": "Germany"
+            },
+            "DocumentUrl": "",
+            "Email": "",
+            "FirstName": "Kerstin ",
+            "Gender": 2,
+            "IdNumber": "C3HTRLFKH",
+            "IdSupportNumber": "",
+            "IdType": 1,
+            "ImageUrl": "",
+            "IsAssignToReservation": true,
+            "IsVip": false,
+            "Issuer": "",
+            "LastName": "Buhl",
+            "Notes": [],
+            "Owner": true,
+            "Phone": "491637214350",
+            "PhotoUrl": "Images\/Gender\/female_icon.gif",
+            "PurposeOfStay": "",
+            "Reservations": [],
+            "SecondLastName": "",
+            "SpecialInfo1": "",
+            "SpecialInfo2": "",
+            "Title": 0,
+            "ZipCode": ""
+        },
+        {
+            "Href": "properties\/5137\/guests\/219296",
+            "Id": 219296,
+            "Address1": "",
+            "Address2": "",
+            "Birthdate": "\/Date(-60307200000)\/",
+            "BlacklistReason": "",
+            "BlacklistRecommendation": "",
+            "BlacklistSeverity": "",
+            "ChildRelationship": "",
+            "City": "",
+            "CityIneCode": "",
+            "Country": {
+                "Href": "countries\/594",
+                "Id": 594,
+                "Code": "DE",
+                "Code_alpha3": "DEU",
+                "Currency": {
+                    "Href": "currencies\/"
+                },
+                "Name": "Germany"
+            },
+            "DocumentUrl": "",
+            "Email": "",
+            "FirstName": "Gumprecht",
+            "Gender": 1,
+            "IdNumber": "C3JRTCL27",
+            "IdSupportNumber": "",
+            "IdType": 1,
+            "ImageUrl": "",
+            "IsAssignToReservation": true,
+            "IsVip": false,
+            "Issuer": "",
+            "LastName": "Buhl",
+            "Notes": [],
+            "Phone": "491785853358",
+            "PhotoUrl": "Images\/Gender\/male_icon.gif",
+            "PurposeOfStay": "",
+            "Reservations": [],
+            "SecondLastName": "",
+            "SpecialInfo1": "",
+            "SpecialInfo2": "",
+            "Title": 0,
+            "ZipCode": ""
+        }
+    ],
+    "History": [],
+    "IsCityTaxAdded": true,
+    "LastAutoAuthoriseDateTry": null,
+    "LastAutoChargeDateTry": null,
+    "ManualQuipuInvoiceExist": false,
+    "Nights": 2,
+    "Notes": [],
+    "OnlineCheckIn": false,
+    "OnlineCheckInAdyenPaymentInProgress": false,
+    "OnlineGuestUrl": "https:\/\/new-booking.frontdeskmaster.com\/account?id=LFQlOJvnLzSnVfKABPQ4GUmsON%2byCipTwDcwvPcoDEw%3d",
+    "OwnerGuestId": 219295,
+    "PaymentType": "",
+    "People": 2,
+    "PreviousBookingStatus": 1,
+    "Rate": {
+        "Id": 8
+    },
+    "RateId": 8,
+    "ReservationCode": "118195",
+    "SaleItemHistory": [
+        {
+            "CreateInfo": {
+                "Created": "\/Date(1777363450960)\/"
+            },
+            "Href": "properties\/5137\/saleItemHistories\/191686",
+            "Id": 191686,
+            "Billto": {
+                "Href": "accounts\/169354",
+                "Id": 169354,
+                "Email": "artsidoruk2006@gmail.com",
+                "FirstName": "Artem",
+                "IsPasswordSecure": true,
+                "LanguageId": 0,
+                "LastLoginDate": "\/Date(1777167729083)\/",
+                "LastName": "Sydoruk",
+                "NewsPopUpDisplayed": true,
+                "UserSettings": []
+            },
+            "ConsumptionDate": "\/Date(1777334400000)\/",
+            "Cost": 69.2,
+            "Currency": {
+                "Id": 435
+            },
+            "Guest": {
+                "Email": "",
+                "FirstName": "Kerstin ",
+                "LastName": "Buhl",
+                "Phone": "491637214350"
+            },
+            "Note": "",
+            "OriginalAmount": 17.3,
+            "Price": 17.3,
+            "Quantity": 4,
+            "ReservationId": 110507,
+            "SaleItem": {
+                "SaleItemCategoryId": 11,
+                "TaxRateValues": "1=12.5&2=12.5",
+                "Title": "Tourist tax 1 - 350 uah 2022"
+            },
+            "SaleItemId": 495
+        }
+    ],
+    "SaleTaxInTimePeriod": [],
+    "ServiceFee": 0.00,
+    "Source": "",
+    "TaxFromPortal": false,
+    "TotalPrice": 1389.20
+}

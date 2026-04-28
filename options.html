@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Налаштування шаблону — FDM</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Шаблон тексту</h1>
+      <p class="hint">
+        Плейсхолдери: <code>{{Шлях}}</code> або <code>{{Шлях|модифікатор}}</code>. <code>|dmy</code> — дата;
+        <code>|moneyUA</code> — сума з пробілами; <code>{{AssignedNights|roomLinesUk}}</code> — тип кімнати
+        українською (зачитує назву з <code>rooms.json</code> за <code>Room.Id</code> + <code>RoomUse.Id</code>,
+        без номера кімнати та без літери ліжка).
+        <code>{{FDM|totalWithTax}}</code> — сума проживання: додаються <code>Price</code> / <code>BasicPrice</code>
+        усіх <code>AssignedNights</code> (без тур. збору та інших рядків з <code>SaleItemHistory</code>);
+        якщо з ночей зібрати суму не виходить — береться <code>TotalPrice</code> мінус тур. збір за евристикою; далі фіксований текст про тур. збір.
+        Сирий код кімнат: <code>{{AssignedNights|roomLines}}</code>.
+      </p>
+      <label for="template">Шаблон (кілька рядків можна)</label>
+      <textarea id="template" rows="14" spellcheck="false"></textarea>
+      <label for="locale">Мова дат (locale)</label>
+      <input id="locale" type="text" placeholder="uk-UA" />
+      <p class="hint small">
+        Приклади ключів: <code>ReservationCode</code>, <code>CheckInDate</code>, <code>CheckOutDate</code>,
+        <code>Nights</code>, <code>TotalPrice</code>, <code>Guests.0.Phone</code>,
+        <code>BookingMethod.Name</code>, <code>OnlineCheckIn</code>.
+      </p>
+      <button id="save" type="button">Зберегти</button>
+      <p id="saved" class="saved" hidden>Збережено.</p>
+    </div>
+    <script src="templateEngine.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
