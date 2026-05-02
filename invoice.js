@@ -151,13 +151,5 @@
     });
   }
 
-  document.getElementById("btnPrint").addEventListener("click", function () {
-    window.print();
-  });
-  document.getElementById("btnReload").addEventListener("click", function () {
-    roomsCatalogCache = undefined;
-    run();
-  });
-
   run();
 })();
