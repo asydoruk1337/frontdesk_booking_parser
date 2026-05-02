@@ -5,8 +5,11 @@
   --muted: #444;
   --rule: #ccc;
   --toolbar-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Текст аркуша: збільште/зменште обидва, для друку — той самий розмір у pt */
   --invoice-font-size: 19px;
-  --invoice-font-size-print: 19px;
+  --invoice-font-size-print: 19pt;
+  /* Логотип у сторінці — invoice-logo.png; джерело: лого_футболка – копія (1).tif
+     Оновлення PNG: sips -s format png "лого_футболка – копія (1).tif" --out invoice-logo.png */
   --invoice-logo-max-width: 200px;
 }
 
