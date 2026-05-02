@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Інвойс — DREAM Hostel Lviv</title>
+    <link rel="stylesheet" href="invoice.css" />
+  </head>
+  <body>
+    <div id="stateEmpty" class="state-empty" hidden>
+      Немає знятих даних бронювання. Відкрийте картку бронювання на FrontDeskMaster, потім відкрийте цю сторінку знову.
+    </div>
+    <div id="stateError" class="state-error" hidden></div>
+
+    <article id="invoiceSheet" class="sheet" hidden>
+      <header class="invoice-head">
+        <img class="logo" src="invoice-logo.png" alt="DREAM Hostel Lviv" />
+        <div class="head-requisites">
+          <p>ТОВ "ДРІМ ХОСТЕЛ ЗАХІД"</p>
+          <p>ЄДПРОУ 40740523</p>
+          <p>Р/р:UA053257960000026009300585226</p>
+          <p>ФІЛІЯ ЛЬВІВСЬКЕ УПРАВЛІННЯ АТ "ОЩАДБАНК", МФО 325796</p>
+          <p>Компанія є платником єдиного податку 3- тя група</p>
+        </div>
+      </header>
+
+      <p class="doc-date" id="docDate"></p>
+
+      <p class="lead">
+        Цей документ затверджує проживання та оплату гостя в DREAM Hostel Lviv:
+      </p>
+
+      <dl class="facts">
+        <dt>Номер бронювання:</dt>
+        <dd id="fieldCode"></dd>
+        <dt>Дата проживання:</dt>
+        <dd id="fieldStay"></dd>
+        <dt>Ім’я гостя:</dt>
+        <dd id="fieldGuest"></dd>
+        <dt>Номер:</dt>
+        <dd id="fieldRoom"></dd>
+        <dt>Вартість проживання:</dt>
+        <dd id="fieldAcc"></dd>
+        <dt>Туристичний збір:</dt>
+        <dd id="fieldTax"></dd>
+        <dt>Загальна вартість проживання:</dt>
+        <dd id="fieldTotal" class="total-strong"></dd>
+      </dl>
+
+      <p class="closing">Якщо у Вас виникають якісь питання, звертайтесь за адресою нижче</p>
+
+      <div class="sign-block">
+        <p class="line">З повагою,</p>
+        <p class="line name">Тищенко Аліна</p>
+        <p class="line org">DREAM Hostel Lviv</p>
+        <p class="line">5, Krakivska Str</p>
+        <p class="line">Lviv, 70998</p>
+        <p class="line">Ukraine</p>
+      </div>
+    </article>
+
+    <script src="templateEngine.js"></script>
+    <script src="invoice.js"></script>
+  </body>
+</html>

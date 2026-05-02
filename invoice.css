@@ -1,0 +1,179 @@
+/* Invoice — макет під друк A4 та збереження в PDF (Друк → PDF) */
+
+:root {
+  --ink: #1a1a1a;
+  --muted: #444;
+  --rule: #ccc;
+  --toolbar-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Текст аркуша: збільште/зменште обидва, для друку — той самий розмір у pt */
+  --invoice-font-size: 19px;
+  --invoice-font-size-print: 19pt;
+  /* Логотип у сторінці — invoice-logo.png; джерело: лого_футболка – копія (1).tif
+     Оновлення PNG: sips -s format png "лого_футболка – копія (1).tif" --out invoice-logo.png */
+  --invoice-logo-max-width: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--invoice-font-size);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--toolbar-font);
+  color: var(--ink);
+  background: #e8e8e8;
+  line-height: 1.45;
+}
+
+.sheet {
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 1.25rem auto;
+  padding: 18mm 20mm 22mm;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  font-family: "Times New Roman", Times, "Liberation Serif", serif;
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.invoice-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.invoice-head .logo {
+  display: block;
+  flex-shrink: 0;
+  max-width: var(--invoice-logo-max-width);
+  width: auto;
+  height: auto;
+}
+
+.head-requisites {
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+  line-height: 1.45;
+}
+
+.head-requisites p {
+  margin: 0.12rem 0;
+}
+
+.doc-date {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+}
+
+.lead {
+  margin: 0 0 1.1rem;
+}
+
+.facts {
+  margin: 0 0 1.5rem;
+}
+
+.facts::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.facts dt {
+  margin: 0;
+  padding: 0.35rem 0 0;
+  font-weight: 600;
+  clear: left;
+  float: left;
+  width: 12.5rem;
+  color: var(--ink);
+}
+
+.facts dd {
+  margin: 0 0 0 12.5rem;
+  padding: 0.35rem 0 0;
+  min-height: 1.5em;
+}
+
+.facts dd.total-strong {
+  font-weight: 700;
+}
+
+.closing {
+  margin: 1.75rem 0 1.25rem;
+  color: var(--muted);
+}
+
+.sign-block {
+  margin: 1.5rem 0 2rem;
+}
+
+.sign-block .line {
+  margin: 0.15rem 0;
+}
+
+.sign-block .name {
+  font-weight: 600;
+}
+
+.sign-block .org {
+  font-weight: 600;
+}
+
+.state-empty,
+.state-error {
+  max-width: 36rem;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  background: #fff3cd;
+  border: 1px solid #e0c36a;
+  border-radius: 8px;
+  color: #5c4a00;
+  font-family: var(--toolbar-font);
+  font-size: 1rem;
+}
+
+.state-error {
+  background: #fdecea;
+  border-color: #e57373;
+  color: #6a1b1b;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+
+  html {
+    font-size: var(--invoice-font-size-print);
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .sheet {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    max-width: none;
+    min-height: 0;
+  }
+
+  .invoice-head {
+    border-bottom-color: #999;
+  }
+}

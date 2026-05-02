@@ -5,6 +5,7 @@ const OPTIONS_LOCALE_KEY = "fdmLocale";
 const statusEl = document.getElementById("status");
 const metaEl = document.getElementById("meta");
 const genBtn = document.getElementById("generate");
+const invoiceBtn = document.getElementById("openInvoice");
 const resultEl = document.getElementById("result");
 
 function setStatus(text, ok) {
@@ -84,6 +85,7 @@ async function refresh() {
   resultEl.hidden = true;
   if (!entry || !entry.payload) {
     genBtn.disabled = true;
+    invoiceBtn.disabled = true;
     setStatus("Ще немає знятих даних бронювання. Відкрийте картку бронювання на сайті.", false);
     metaEl.textContent = "";
     return;
@@ -93,6 +95,7 @@ async function refresh() {
   setStatus("Дані бронювання готові.", true);
   metaEl.textContent = "Код: " + code + (when ? " · знято: " + when : "");
   genBtn.disabled = false;
+  invoiceBtn.disabled = false;
 }
 
 genBtn.addEventListener("click", async () => {
@@ -120,6 +123,10 @@ document.addEventListener("visibilitychange", () => {
 document.getElementById("openOptions").addEventListener("click", (e) => {
   e.preventDefault();
   if (chrome.runtime.openOptionsPage) chrome.runtime.openOptionsPage();
+});
+
+invoiceBtn.addEventListener("click", () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("invoice.html") });
 });
 
 var creditsModal = document.getElementById("creditsModal");
