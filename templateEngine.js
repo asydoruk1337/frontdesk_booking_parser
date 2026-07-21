@@ -463,6 +463,93 @@ function applyTemplate(obj, template, locale, roomsCatalog) {
   });
 }
 
+/** Дефолтний поріг (грн): вище — шаблон для великих сум */
+var DEFAULT_TEMPLATE_THRESHOLD = 10000;
+
+function defaultTemplateStandard() {
+  return [
+    "Щойно з Вами спілкувались щодо бронювання.",
+    "",
+    "Код бронювання: {{ReservationCode}}",
+    "",
+    "Дати бронювання: {{CheckInDate|dmy}} - {{CheckOutDate|dmy}}",
+    "",
+    "Тип кімнати:",
+    "{{AssignedNights|roomLinesUk}}",
+    "",
+    "Загальна вартість: {{FDM|totalWithTax}}",
+    "",
+    "Просимо внести передоплату розміром 50% або 100% за тиждень до заселення за цими реквізитами:",
+    "",
+    'ТОВ "ДРІМ ХОСТЕЛ ЗАХІД"',
+    "ЄДПРОУ 40740523",
+    "Р/р:UA053257960000026009300585226",
+    "ФІЛІЯ ЛЬВІВСЬКЕ УПРАВЛІННЯ АТ ",
+    '"ОЩАДБАНК",',
+    "МФО 325796",
+    "Компанія є платником єдиного податку ",
+    "3- тя група",
+    "Тел.: +38 (032) 247-10-47",
+    "",
+    "Важлива інформація:",
+    "",
+    "Час заселення 15:00, час виселення 11:00",
+    "",
+    "Умови скасування: Ви можете скасувати чи внести зміни у Ваше бронювання безкоштовно за тиждень до дати заїзду, в іншому випадку кошти не повертаються.",
+  ].join("\n");
+}
+
+/** Шаблон для бронювань дорожчих за поріг (за замовчуванням — 100% передоплата) */
+function defaultTemplateHigh() {
+  return [
+    "Щойно з Вами спілкувались щодо бронювання.",
+    "",
+    "Код бронювання: {{ReservationCode}}",
+    "",
+    "Дати бронювання: {{CheckInDate|dmy}} - {{CheckOutDate|dmy}}",
+    "",
+    "Тип кімнати:",
+    "{{AssignedNights|roomLinesUk}}",
+    "",
+    "Загальна вартість: {{FDM|totalWithTax}}",
+    "",
+    "Просимо внести передоплату розміром 100% за тиждень до заселення за цими реквізитами:",
+    "",
+    'ТОВ "ДРІМ ХОСТЕЛ ЗАХІД"',
+    "ЄДПРОУ 40740523",
+    "Р/р:UA053257960000026009300585226",
+    "ФІЛІЯ ЛЬВІВСЬКЕ УПРАВЛІННЯ АТ ",
+    '"ОЩАДБАНК",',
+    "МФО 325796",
+    "Компанія є платником єдиного податку ",
+    "3- тя група",
+    "Тел.: +38 (032) 247-10-47",
+    "",
+    "Важлива інформація:",
+    "",
+    "Час заселення 15:00, час виселення 11:00",
+    "",
+    "Умови скасування: Ви можете скасувати чи внести зміни у Ваше бронювання безкоштовно за тиждень до дати заїзду, в іншому випадку кошти не повертаються.",
+  ].join("\n");
+}
+
+/**
+ * Вибір шаблону за вартістю проживання (accommodationTotalUa).
+ * Якщо сума > threshold — high, інакше standard.
+ */
+function pickTemplateByAmount(reservation, templateStandard, templateHigh, threshold) {
+  var amount = accommodationTotalUa(reservation);
+  var limit = Number(threshold);
+  if (Number.isNaN(limit) || limit < 0) limit = DEFAULT_TEMPLATE_THRESHOLD;
+  var useHigh = amount > limit;
+  return {
+    template: useHigh ? templateHigh : templateStandard,
+    variant: useHigh ? "high" : "standard",
+    amount: amount,
+    threshold: limit,
+  };
+}
+
 if (typeof globalThis !== "undefined") {
   globalThis.FdmTemplate = {
     applyTemplate: applyTemplate,
@@ -482,5 +569,9 @@ if (typeof globalThis !== "undefined") {
     parseRoomUseMeta: parseRoomUseMeta,
     formatRoomUkFromMeta: formatRoomUkFromMeta,
     countDistinctGuestsForRoomUse: countDistinctGuestsForRoomUse,
+    defaultTemplateStandard: defaultTemplateStandard,
+    defaultTemplateHigh: defaultTemplateHigh,
+    DEFAULT_TEMPLATE_THRESHOLD: DEFAULT_TEMPLATE_THRESHOLD,
+    pickTemplateByAmount: pickTemplateByAmount,
   };
 }

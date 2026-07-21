@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="wrap">
-      <h1>Шаблон тексту</h1>
+      <h1>Шаблони тексту</h1>
       <p class="hint">
         Плейсхолдери: <code>{{Шлях}}</code> або <code>{{Шлях|модифікатор}}</code>. <code>|dmy</code> — дата;
         <code>|moneyUA</code> — сума з пробілами; <code>{{AssignedNights|roomLinesUk}}</code> — тип кімнати
@@ -18,8 +18,31 @@
         якщо з ночей зібрати суму не виходить — береться <code>TotalPrice</code> мінус тур. збір за евристикою; далі фіксований текст про тур. збір.
         Сирий код кімнат: <code>{{AssignedNights|roomLines}}</code>.
       </p>
-      <label for="template">Шаблон (кілька рядків можна)</label>
-      <textarea id="template" rows="14" spellcheck="false"></textarea>
+
+      <section class="section">
+        <h2>Поріг суми</h2>
+        <p class="hint small">
+          Якщо вартість проживання (та сама, що в <code>{{FDM|totalWithTax}}</code>, без тур. збору)
+          <strong>більша</strong> за поріг — застосовується шаблон для великих сум; інакше — звичайний.
+        </p>
+        <label for="threshold">Поріг (грн)</label>
+        <input id="threshold" type="number" min="0" step="1" placeholder="10000" />
+      </section>
+
+      <section class="section">
+        <h2>Звичайний шаблон</h2>
+        <p class="hint small">Коли вартість ≤ порогу.</p>
+        <label for="template">Шаблон (кілька рядків можна)</label>
+        <textarea id="template" rows="14" spellcheck="false"></textarea>
+      </section>
+
+      <section class="section">
+        <h2>Шаблон для великих сум</h2>
+        <p class="hint small">Коли вартість &gt; порогу.</p>
+        <label for="templateHigh">Шаблон (кілька рядків можна)</label>
+        <textarea id="templateHigh" rows="14" spellcheck="false"></textarea>
+      </section>
+
       <label for="locale">Мова дат (locale)</label>
       <input id="locale" type="text" placeholder="uk-UA" />
       <p class="hint small">

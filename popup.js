@@ -1,5 +1,7 @@
 const STORAGE_KEY = "fdmLastReservation";
 const OPTIONS_TEMPLATE_KEY = "fdmTemplate";
+const OPTIONS_TEMPLATE_HIGH_KEY = "fdmTemplateHigh";
+const OPTIONS_THRESHOLD_KEY = "fdmTemplateThreshold";
 const OPTIONS_LOCALE_KEY = "fdmLocale";
 
 const statusEl = document.getElementById("status");
@@ -36,48 +38,23 @@ async function getRoomsCatalog() {
   return roomsCatalogCache;
 }
 
-async function loadTemplateAndLocale() {
+async function loadTemplateSettings() {
   const raw = await chrome.storage.sync.get({
-    [OPTIONS_TEMPLATE_KEY]: defaultTemplate(),
+    [OPTIONS_TEMPLATE_KEY]: FdmTemplate.defaultTemplateStandard(),
+    [OPTIONS_TEMPLATE_HIGH_KEY]: FdmTemplate.defaultTemplateHigh(),
+    [OPTIONS_THRESHOLD_KEY]: FdmTemplate.DEFAULT_TEMPLATE_THRESHOLD,
     [OPTIONS_LOCALE_KEY]: "uk-UA",
   });
+  var threshold = Number(raw[OPTIONS_THRESHOLD_KEY]);
+  if (Number.isNaN(threshold) || threshold < 0) {
+    threshold = FdmTemplate.DEFAULT_TEMPLATE_THRESHOLD;
+  }
   return {
-    template: raw[OPTIONS_TEMPLATE_KEY],
+    templateStandard: raw[OPTIONS_TEMPLATE_KEY],
+    templateHigh: raw[OPTIONS_TEMPLATE_HIGH_KEY],
+    threshold: threshold,
     locale: raw[OPTIONS_LOCALE_KEY] || "uk-UA",
   };
-}
-
-function defaultTemplate() {
-  return [
-    "Щойно з Вами спілкувались щодо бронювання.",
-    "",
-    "Код бронювання: {{ReservationCode}}",
-    "",
-    "Дати бронювання: {{CheckInDate|dmy}} - {{CheckOutDate|dmy}}",
-    "",
-    "Тип кімнати:",
-    "{{AssignedNights|roomLinesUk}}",
-    "",
-    "Загальна вартість: {{FDM|totalWithTax}}",
-    "",
-    "Просимо внести передоплату розміром 50% або 100% за тиждень до заселення за цими реквізитами:",
-    "",
-    'ТОВ "ДРІМ ХОСТЕЛ ЗАХІД"',
-    "ЄДПРОУ 40740523",
-    "Р/р:UA053257960000026009300585226",
-    "ФІЛІЯ ЛЬВІВСЬКЕ УПРАВЛІННЯ АТ ",
-    '"ОЩАДБАНК",',
-    "МФО 325796",
-    "Компанія є платником єдиного податку ",
-    "3- тя група",
-    "Тел.: +38 (032) 247-10-47",
-    "",
-    "Важлива інформація:",
-    "",
-    "Час заселення 15:00, час виселення 11:00",
-    "",
-    "Умови скасування: Ви можете скасувати чи внести зміни у Ваше бронювання безкоштовно за тиждень до дати заїзду, в іншому випадку кошти не повертаються.",
-  ].join("\n");
 }
 
 async function refresh() {
@@ -101,12 +78,24 @@ async function refresh() {
 genBtn.addEventListener("click", async () => {
   const entry = await loadLastReservation();
   if (!entry?.payload) return;
-  const { template, locale } = await loadTemplateAndLocale();
+  const settings = await loadTemplateSettings();
+  const picked = FdmTemplate.pickTemplateByAmount(
+    entry.payload,
+    settings.templateStandard,
+    settings.templateHigh,
+    settings.threshold
+  );
   const catalog = await getRoomsCatalog();
-  const text = FdmTemplate.applyTemplate(entry.payload, template, locale, catalog);
+  const text = FdmTemplate.applyTemplate(entry.payload, picked.template, settings.locale, catalog);
   try {
     await navigator.clipboard.writeText(text);
-    resultEl.textContent = "Скопійовано в буфер.";
+    var amountLabel = FdmTemplate.formatMoneyUA(picked.amount);
+    var variantLabel =
+      picked.variant === "high"
+        ? "шаблон для великих сум (>" + FdmTemplate.formatMoneyUA(picked.threshold) + ")"
+        : "звичайний шаблон (≤" + FdmTemplate.formatMoneyUA(picked.threshold) + ")";
+    resultEl.textContent =
+      "Скопійовано в буфер. " + variantLabel + ", сума: " + amountLabel + " грн.";
     resultEl.hidden = false;
     resultEl.classList.add("ok");
   } catch (e) {
